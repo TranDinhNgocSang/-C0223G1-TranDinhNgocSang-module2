@@ -4,50 +4,41 @@ import java.util.Scanner;
 
 public class HienThiHinh {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         System.out.println("in hình chữ nhật");
-        String stringHinhChuNhat = "";
-        for (int i = 0; i <5; i++) {
+        for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 10; j++) {
-                stringHinhChuNhat += "*";
+                System.out.print("* ");
 
             }
-            stringHinhChuNhat +="\n";
+            System.out.println();
         }
-        System.out.println(stringHinhChuNhat);
         System.out.println("In hình tam giác vuông, có cạnh góc vuông ở botton-left");
-        String stringHinhTamGiac = "";
-        for (int i = 0; i <5; i++) {
+        for (int i = 0; i < 5; i++) {
             for (int j = 0; j <= i; j++) {
-                stringHinhTamGiac += "*";
+                System.out.print("*");
 
             }
-            stringHinhTamGiac +="\n";
+            System.out.println();
         }
-        System.out.println(stringHinhTamGiac);
         System.out.println("In hình tam giác vuông, có cạnh góc vuông ở top-left");
-        String stringHinhTamGiac2 = "";
         for (int i = 5; i > 0; i--) {
             for (int j = 0; j < i; j++) {
-                stringHinhTamGiac2 += "*";
+                System.out.print("*");
 
             }
-            stringHinhTamGiac2 +="\n";
+            System.out.println();
         }
-        System.out.println(stringHinhTamGiac2);
         System.out.println("In hình tam giác cân");
-        String stringHinhTamGiacCan = "";
-        int a =3;
-        for (int i = 3; i > 0; i++) {
-            for (int j = 0; j < 3*2-1; j++) {
-                if (j<i-1){
-                    stringHinhTamGiac2 += " ";
-                }else {
-                    stringHinhTamGiac2 += "*";
+        int num = 5;
+        for (int i = 1; i <= num; i++) {
+            for (int j = 1; j <= num * 2 - 1; j++) {
+                if (j <= num - i || j >= num + i) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print("*");
                 }
             }
-            stringHinhTamGiac2 +="\n";
+            System.out.println();
         }
-        System.out.println(stringHinhTamGiac2);
     }
 }
