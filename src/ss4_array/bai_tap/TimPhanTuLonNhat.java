@@ -8,7 +8,7 @@ public class TimPhanTuLonNhat {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                System.out.println("nhập phần tử thứ "+"["+i+"]["+j+"]"+ " của mảng");
+                System.out.println("nhập phần tử thứ " + "[" + i + "][" + j + "]" + " của mảng");
                 arr[i][i] = Double.parseDouble(sc.nextLine());
             }
         }
@@ -20,7 +20,7 @@ public class TimPhanTuLonNhat {
                 }
             }
         }
-        System.out.println("giá trị lớn nhất của mảng là: "+max);
+        System.out.println("giá trị lớn nhất của mảng là: " + max);
     }
 }
 
