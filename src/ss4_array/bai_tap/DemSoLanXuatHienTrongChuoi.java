@@ -1,5 +1,7 @@
 package ss4_array.bai_tap;
 
+import java.util.Scanner;
+
 public class DemSoLanXuatHienTrongChuoi {
     public static void main(String[] args) {
         String str = "Tran Dinh Ngoc Sang";
