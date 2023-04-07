@@ -16,6 +16,6 @@ public class Main {
         }
         clock.stop();
         System.out.println(clock.getEndTime());
-        System.out.println("thời gian thực hiện thuật toán là: "+clock.getElapsedTime()+" ");
+        System.out.println("thời gian thực hiện thuật toán là: " + clock.getElapsedTime() + " ");
     }
 }
