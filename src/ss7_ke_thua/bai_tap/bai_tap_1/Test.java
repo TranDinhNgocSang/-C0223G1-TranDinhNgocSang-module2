@@ -15,13 +15,13 @@ public class Test {
         System.out.println("------------------------------------------");
 
         System.out.println("kiểm tra Point3D");
-        Point3D point3D = new Point3D(1,1,1);
+        Point3D point3D = new Point3D(1, 1, 1);
         System.out.println(Arrays.toString(point3D.getXYZ()));
         System.out.println(point3D);
-        point3D.setXY(2,2);
+        point3D.setXY(2, 2);
         System.out.println(Arrays.toString(point3D.getXYZ()));
         System.out.println(point3D);
-        point3D.setXYZ(5,5,5);
+        point3D.setXYZ(5, 5, 5);
         System.out.println(Arrays.toString(point3D.getXYZ()));
         System.out.println(point3D);
     }

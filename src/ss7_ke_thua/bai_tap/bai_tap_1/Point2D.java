@@ -1,8 +1,8 @@
 package ss7_ke_thua.bai_tap.bai_tap_1;
 
 public class Point2D {
-    protected float x = 0.0f;
-    protected float y = 0.0f;
+    private float x = 0.0f;
+    private float y = 0.0f;
 
     public Point2D() {
     }

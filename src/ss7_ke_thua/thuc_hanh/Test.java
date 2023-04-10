@@ -34,10 +34,10 @@ public class Test {
         Square square;
         square = new Square(2);
         System.out.println(square);
-        System.out.println("Area is: "+square.getArea());
+        System.out.println("Area is: " + square.getArea());
         square = new Square("yellow", true, 5);
         System.out.println(square);
-        System.out.println("Area is: "+square.getArea());
+        System.out.println("Area is: " + square.getArea());
     }
 }
 

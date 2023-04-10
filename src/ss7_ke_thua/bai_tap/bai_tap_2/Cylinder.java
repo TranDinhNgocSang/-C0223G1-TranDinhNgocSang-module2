@@ -26,14 +26,16 @@ public class Cylinder extends Circle {
             this.height = 0;
         }
     }
-    public double getVolume (){
-        return getArea()*this.height;
+
+    public double getVolume() {
+        return getArea() * this.height;
     }
+
     @Override
     public String toString() {
         return "Cylinder{" +
-                "radius=" + radius +
-                ", color='" + color + '\'' +
+                "radius=" + super.getRadius() +
+                ", color='" + super.getColor() + '\'' +
                 ", height=" + height +
                 '}';
     }

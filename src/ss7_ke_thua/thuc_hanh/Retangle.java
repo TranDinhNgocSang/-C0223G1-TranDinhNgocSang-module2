@@ -1,8 +1,8 @@
 package ss7_ke_thua.thuc_hanh;
 
 public class Retangle extends Shape {
-    protected double width;
-    protected double heigth;
+    private double width;
+    private double heigth;
 
     public Retangle() {
         this.width = 1.0;

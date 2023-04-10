@@ -10,7 +10,7 @@ public class Square extends Retangle {
     }
 
     public double getSide() {
-        return this.width;
+        return super.getWidth();
     }
 
     public void setSide(double side) {
