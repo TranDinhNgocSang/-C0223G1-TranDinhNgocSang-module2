@@ -65,8 +65,17 @@ public class MyList<E> {
             for (int i = index; i < size; i++) {
                 elements[i] = elements[i + 1];
             }
+            elements[size-1]= null;
             size--;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "MyList{" +
+                "size=" + size +
+                ", elements=" + Arrays.toString(elements) +
+                '}';
     }
 }
 
