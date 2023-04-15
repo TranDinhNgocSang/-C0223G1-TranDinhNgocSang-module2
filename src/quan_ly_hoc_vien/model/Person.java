@@ -1,19 +1,18 @@
-package ss10_dsa_danh_sach.bai_tap.quan_ly_sinh_vien.model;
+package quan_ly_hoc_vien.model;
 
 public abstract class Person {
     private int id;
     private String name;
-    private String dateOfBirth;
+    private String dayOfBirth;
     private boolean gender;
 
-
-    protected Person() {
+    public Person() {
     }
 
-    public Person(int id, String name, String dateOfBirth, boolean gender) {
+    public Person(int id, String name, String dayOfBirth, boolean gender) {
         this.id = id;
         this.name = name;
-        this.dateOfBirth = dateOfBirth;
+        this.dayOfBirth = dayOfBirth;
         this.gender = gender;
     }
 
@@ -33,12 +32,12 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public String getDayOfBirth() {
+        return dayOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDayOfBirth(String dayOfBirth) {
+        this.dayOfBirth = dayOfBirth;
     }
 
     public boolean isGender() {
@@ -51,11 +50,16 @@ public abstract class Person {
 
     @Override
     public String toString() {
+        String sex;
+        if (gender) {
+            sex = "nam";
+        } else {
+            sex = "nữ";
+        }
         return "Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", gender=" + gender +
-                '}';
+                ", dayOfBirth='" + dayOfBirth + '\'' +
+                ", gender=" + sex + ", ";
     }
 }
