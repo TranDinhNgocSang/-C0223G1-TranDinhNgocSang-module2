@@ -32,7 +32,7 @@ public class StudentRepository implements IStudentRepository {
     public boolean deleteStudentById(int id) {
         for (int i = 0; i < studentList.size(); i++) {
             if (studentList.get(i).getId() == id) {
-                studentList.remove(i);
+//                studentList.remove(i);
                 return true;
             }
         }
