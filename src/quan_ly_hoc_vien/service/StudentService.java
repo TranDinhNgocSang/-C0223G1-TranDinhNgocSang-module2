@@ -15,7 +15,6 @@ public class StudentService implements IStudentService {
 
     @Override
     public void displayStudentList() {
-        // lay o repo roi hien thi sau.
         ArrayList<Student> studentList = studentRepository.getStudentList();
         for (Student s : studentList) {
             System.out.println(s);
