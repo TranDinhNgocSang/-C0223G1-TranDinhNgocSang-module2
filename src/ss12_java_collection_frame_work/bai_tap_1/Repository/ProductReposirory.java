@@ -65,13 +65,7 @@ public class ProductReposirory implements IProductRepository {
         Collections.sort(this.getProductList(), new Comparator<Product>() {
             @Override
             public int compare(Product product1, Product product2) {
-                if (product1.getPrice() < product2.getPrice()) {
-                    return -1;
-                } else if (product1.getPrice() > product2.getPrice()) {
-                    return 1;
-                } else {
-                    return 0;
-                }
+               return (int) (product1.getPrice()-product2.getPrice());
             }
         });
     }
@@ -81,13 +75,7 @@ public class ProductReposirory implements IProductRepository {
         Collections.sort(this.getProductList(), new Comparator<Product>() {
             @Override
             public int compare(Product product1, Product product2) {
-                if (product1.getPrice() < product2.getPrice()) {
-                    return 1;
-                } else if (product1.getPrice() > product2.getPrice()) {
-                    return -1;
-                } else {
-                    return 0;
-                }
+                return (int) (product2.getPrice()-product1.getPrice());
             }
         });
     }
