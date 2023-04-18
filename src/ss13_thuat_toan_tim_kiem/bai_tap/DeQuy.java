@@ -1,10 +1,13 @@
 package ss13_thuat_toan_tim_kiem.bai_tap;
+import java.util.Arrays;
 
 public class DeQuy {
     public static void main(String[] args) {
-        int[] list = {2, 4, 7, 10, 11, 45, 50, 59, 60, 66, 69, 70, 79};
+        int[] list = {1,3,6,5,2,4,9,7,8};
+        Arrays.sort(list);
+        System.out.println(Arrays.toString(list));
         int size = list.length - 1;
-        System.out.println(binarySearch(list, 0, size, 70));
+        System.out.println(binarySearch(list, 0, size, 7));
 
     }
 
