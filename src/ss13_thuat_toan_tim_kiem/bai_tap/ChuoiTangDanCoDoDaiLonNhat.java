@@ -6,13 +6,10 @@ import java.util.Scanner;
 public class ChuoiTangDanCoDoDaiLonNhat {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
-        System.out.print("Nhập chuỗi: ");
+        System.out.println("Nhập chuỗi: ");
         String string = input.nextLine();
-
         ArrayList<Character> arrayListMax = new ArrayList<>();
         ArrayList<Character> arrayList = new ArrayList<>();
-
         for (int i = 0; i < string.length(); i++) {
             arrayList.add(string.charAt(i));
             for (int j = i + 1; j < string.length(); j++) {
