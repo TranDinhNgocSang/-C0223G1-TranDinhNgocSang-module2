@@ -72,6 +72,6 @@ public class ProductReposirory implements IProductRepository {
 
     @Override
     public void priceDecrease() {
-       this.productList.sort(((o1, o2) -> (int) (o2.getPrice()-o1.getPrice())));
+       this.productList.sort((o1, o2) -> (int) (o2.getPrice()-o1.getPrice()));
     }
 }

@@ -1,5 +1,6 @@
 package ss13_thuat_toan_tim_kiem.bai_tap;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class DeQuy {
     public static void main(String[] args) {
@@ -8,7 +9,6 @@ public class DeQuy {
         System.out.println(Arrays.toString(list));
         int size = list.length - 1;
         System.out.println(binarySearch(list, 0, size, 7));
-
     }
 
     static int binarySearch(int[] list, int left, int right, int key) {
