@@ -25,14 +25,14 @@ public class MinhHoaThuatToanSapXepChen {
         for (int i = 1; i < array.length; i++) {
             boolean flag = true;
             System.out.println(Arrays.toString(array));
-            System.out.println("xét vị trí thứ "+i+" về trước");
+            System.out.println("xét vị trí thứ " + i + " về trước");
             System.out.println("gán " + array[i] + " ở vị trí thứ " + i + " vào x");
             x = array[i];
             System.out.println("x = " + x);
             pos = i;
             while (pos > 0 && x < array[pos - 1]) {
-                System.out.println("vì "+x+" bé hơn "+array[pos - 1]+ " (ở vị trí thứ " + (pos - 1) +") nên gán " +
-                        array[pos - 1] + " đè lên " + array[pos] + " (ở vị trí thứ " + pos+")");
+                System.out.println("vì " + x + " bé hơn " + array[pos - 1] + " (ở vị trí thứ " + (pos - 1) + ") nên gán " +
+                        array[pos - 1] + " đè lên " + array[pos] + " (ở vị trí thứ " + pos + ")");
                 array[pos] = array[pos - 1];
                 System.out.println(Arrays.toString(array));
                 pos--;
