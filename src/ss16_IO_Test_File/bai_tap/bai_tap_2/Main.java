@@ -1,21 +1,26 @@
 package ss16_IO_Test_File.bai_tap.bai_tap_2;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-
+        File file = new File("E:\\CodeGym\\module2\\src\\ss16_IO_Test_File\\bai_tap\\bai_tap_2\\text");
         BufferedReader br = null;
+        FileReader reader;
         try {
+            reader = new FileReader(file);
+            br = new BufferedReader(reader);
             String line;
-            br = new BufferedReader(new FileReader("E:\\CodeGym\\module2\\src\\ss16_IO_Test_File\\bai_tap\\bai_tap_2\\text"));
-
             while ((line = br.readLine()) != null) {
-                printCountry(parseCsvLine(line));
+               String[] strings = line.split(",");
+                System.out.println("Country [id= "
+                        + strings[0]
+                        + ", code= " + strings[1]
+                        + " , name=" + strings[2]
+                        + "]");
             }
 
         } catch (IOException e) {
@@ -30,23 +35,4 @@ public class Main {
         }
     }
 
-    public static List<String> parseCsvLine(String csvLine) {
-        List<String> result = new ArrayList<>();
-        if (csvLine != null) {
-            String[] splitData = csvLine.split(",");
-            for (int i = 0; i < splitData.length; i++) {
-                result.add(splitData[i]);
-            }
-        }
-        return result;
-    }
-
-    private static void printCountry(List<String> country) {
-        System.out.println(
-                "Country [id= "
-                        + country.get(0)
-                        + ", code= " + country.get(1)
-                        + " , name=" + country.get(2)
-                        + "]");
-    }
 }

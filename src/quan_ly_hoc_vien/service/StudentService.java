@@ -40,7 +40,7 @@ public class StudentService implements IStudentService {
         } else if (chooseGender.equals("2")) {
             gender = false;
         }
-        System.out.print("Nhap lop cua sinh vien: ");
+        System.out.print("Nhap lop cua sinh vien: "); 
         String classes = scanner.nextLine();
         System.out.print("nhap diem cua sinh vien: ");
         double grade = Double.parseDouble(scanner.nextLine());
