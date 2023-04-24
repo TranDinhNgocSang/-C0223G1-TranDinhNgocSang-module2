@@ -1,9 +1,6 @@
 package ss16_IO_Test_File.bai_tap.bai_tap_2;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +11,9 @@ public class Main {
             reader = new FileReader(file);
             br = new BufferedReader(reader);
             String line;
+            if (!file.exists()){
+                throw new FileNotFoundException();
+            }
             while ((line = br.readLine()) != null) {
                String[] strings = line.split(",");
                 System.out.println("Country [id= "

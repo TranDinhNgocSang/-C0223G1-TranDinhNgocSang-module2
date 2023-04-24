@@ -61,7 +61,7 @@ public class CopyFileText {
     }
 
     public static void main(String[] args) {
-        String PATH = "E:\\CodeGym\\module2\\src\\ss16_IO_Test_File\\bai_tap\\bai_tap_1\\target file";
+        final String PATH = "E:\\CodeGym\\module2\\src\\ss16_IO_Test_File\\bai_tap\\bai_tap_1\\target file";
         List<String> list = read("E:\\CodeGym\\module2\\src\\ss16_IO_Test_File\\bai_tap\\bai_tap_1\\source file");
         write(PATH, list);
     }
