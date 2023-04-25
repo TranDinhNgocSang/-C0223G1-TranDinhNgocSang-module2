@@ -13,7 +13,6 @@ public class ReadFile {
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
         List<Product> list = null;
-        Object object = null;
         try {
             File file = new File(PATH);
             if (file.length() == 0) {
@@ -21,8 +20,9 @@ public class ReadFile {
             } else {
                 fileInputStream = new FileInputStream(file);
                 objectInputStream = new ObjectInputStream(fileInputStream);
-                object = objectInputStream.readObject();
-                list = (List<Product>) object;
+                list = (List<Product>) objectInputStream.readObject();
+                objectInputStream.close();
+                fileInputStream.close();
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
