@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadFile {
-    public String PATH = "E:\\CodeGym\\module2\\src\\ss17_serialization\\bai_tap\\quan_ly_san_pham\\repository\\data.txt";
+    public String PATH = "E:\\CodeGym\\module2\\src\\ss17_serialization\\bai_tap\\quan_ly_san_pham\\repository\\data.csv";
 
     public List<Product> read() {
         FileInputStream fileInputStream = null;

@@ -10,4 +10,5 @@ public interface IStudentRepository {
     void deleteStudent(int index);
     int getIndex(String id);
     void editStudent (int index, String id, String name, int age, boolean gender);
+    void ageIncrease();
 }

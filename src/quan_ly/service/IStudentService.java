@@ -5,4 +5,5 @@ public interface IStudentService {
     void addNewStudent();
     void deleteStudent();
     void editStudent();
+    void ageIncrease();
 }

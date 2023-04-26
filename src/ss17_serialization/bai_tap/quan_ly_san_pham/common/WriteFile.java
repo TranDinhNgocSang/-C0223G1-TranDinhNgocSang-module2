@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 
 public class WriteFile {
-    private final String PATH = "E:\\CodeGym\\module2\\src\\ss17_serialization\\bai_tap\\quan_ly_san_pham\\repository\\data.txt";
+    private final String PATH = "E:\\CodeGym\\module2\\src\\ss17_serialization\\bai_tap\\quan_ly_san_pham\\repository\\data.csv";
 
     public void write(List<Product> productList) {
         FileOutputStream fileOutputStream = null;

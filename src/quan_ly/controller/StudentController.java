@@ -15,6 +15,7 @@ public class StudentController {
                     "2. them moi hoc vien\n" +
                     "3. xoa hoc vien theo id\n" +
                     "4. sua hoc vien theo id\n" +
+                    "5. sắp xếp học viên theo tuổi tăng dần" +
                     "0. thoat\n" +
                     "moi chon chuc nang");
             choice = Integer.parseInt(sc.nextLine());
@@ -30,6 +31,9 @@ public class StudentController {
                     break;
                 case 4:
                     studentService.editStudent();
+                    break;
+                case 5:
+                    studentService.ageIncrease();
                     break;
                 case 0:
                     System.out.println("ket thuc");

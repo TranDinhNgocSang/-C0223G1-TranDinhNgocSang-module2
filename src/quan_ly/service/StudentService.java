@@ -88,4 +88,10 @@ public class StudentService implements IStudentService {
         }
         this.showStudentList();
     }
+
+    @Override
+    public void ageIncrease() {
+        studentRepository.ageIncrease();
+        this.showStudentList();
+    }
 }

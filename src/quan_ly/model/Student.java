@@ -57,4 +57,7 @@ public class Student {
                 ", gender=" + gender +
                 '}';
     }
+    public String getInToCsv(){
+        return this.id +","+this.name+","+this.age+","+this.gender;
+    }
 }
