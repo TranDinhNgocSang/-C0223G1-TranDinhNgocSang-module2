@@ -1,4 +1,6 @@
 package FuramaResort.repository;
 
-public interface Repository {
+import java.util.List;
+
+public interface Repository <E>{
 }

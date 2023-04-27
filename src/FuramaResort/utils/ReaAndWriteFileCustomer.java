@@ -1,14 +1,15 @@
 package FuramaResort.utils;
 
+import FuramaResort.model.Customer;
 import FuramaResort.model.Employee;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadAndWriteFileEmployee {
-    public List<Employee> read(String path) {
-        List<Employee> employeeList = new ArrayList<>();
+public class ReaAndWriteFileCustomer {
+    public List<Customer> read(String path) {
+        List<Customer> customerList = new ArrayList<>();
         File file = new File(path);
         try {
             FileReader fileReader = new FileReader(file);
@@ -16,24 +17,24 @@ public class ReadAndWriteFileEmployee {
             String line = null;
             while ((line = bufferedReader.readLine()) != null && !line.equals("")) {
                 String[] str = line.split(",");
-                Employee employee = new Employee(str[0],str[1],str[2],Boolean.parseBoolean(str[3]),str[4],str[5],str[6],
-                        Level.valueOf(str[7]),Position.valueOf(str[8]),Double.parseDouble(str[9]));
-                employeeList.add(employee);
+                Customer customer = new Customer(str[0],str[1],str[2],Boolean.parseBoolean(str[3]),str[4],str[5],str[6],
+                        TypeCustomer.valueOf(str[7]),str[8]);
+                customerList.add(customer);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return employeeList;
+        return customerList;
     }
-    public void write(String path, List<Employee> employeeList){
+    public void write(String path, List<Customer> customerList){
         File file = new File(path);
         try {
             FileWriter fileWriter = new FileWriter(file);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            for (Employee e:employeeList) {
-                bufferedWriter.write(e.getInToCsv());
+            for (Customer c:customerList) {
+                bufferedWriter.write(c.getInToCsv());
                 bufferedWriter.newLine();
             }
             bufferedWriter.flush();

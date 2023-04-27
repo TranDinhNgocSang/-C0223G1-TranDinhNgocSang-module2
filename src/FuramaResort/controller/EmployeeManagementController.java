@@ -1,11 +1,14 @@
 package FuramaResort.controller;
 
+import FuramaResort.service.EmployeeService;
+
 import java.util.Scanner;
 
 public class EmployeeManagementController {
+    EmployeeService employeeService = new EmployeeService();
+    Scanner sc = new Scanner(System.in);
     public void employeeManagementMenu(){
-        Scanner sc = new Scanner(System.in);
-        String choice = "0";
+        String choice;
         do {
             System.out.println("1.Display list employees\n" +
                     "2.Add new employee\n" +
@@ -15,10 +18,13 @@ public class EmployeeManagementController {
             choice = sc.nextLine();
             switch (choice){
                 case "1":
+                    employeeService.displayList();
                     break;
                 case "2":
+                    employeeService.addNew();
                     break;
                 case "3":
+                    employeeService.edit();
                     break;
                 case "4":
                     break;

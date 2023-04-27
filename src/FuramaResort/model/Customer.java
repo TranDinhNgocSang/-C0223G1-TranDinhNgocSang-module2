@@ -9,8 +9,8 @@ public class Customer extends Person{
     public Customer() {
     }
 
-    public Customer(String id, String name, String dateOfBirth, boolean gender, String citizenIDNumber, String numberPhonel, String email, TypeCustomer typeCustomer, String adress) {
-        super(id, name, dateOfBirth, gender, citizenIDNumber, numberPhonel, email);
+    public Customer(String id, String name, String dateOfBirth, boolean gender, String citizenIDNumber, String numberPhone, String email, TypeCustomer typeCustomer, String adress) {
+        super(id, name, dateOfBirth, gender, citizenIDNumber, numberPhone, email);
         this.typeCustomer = typeCustomer;
         this.adress = adress;
     }
@@ -34,8 +34,15 @@ public class Customer extends Person{
     @Override
     public String toString() {
         return "Customer{" + super.toString()+
-                "typeCustomer=" + typeCustomer +
-                ", adress='" + adress + '\'' +
+                "| typeCustomer=" + typeCustomer +
+                "| adress='" + adress + '\'' +
                 '}';
     }
+
+    public String getInToCsv (){
+        return super.getId()+","+super.getName()+","+super.getDateOfBirth()+","+super.isGender()+","+
+                super.getCitizenIDNumber()+","+super.getNumberPhone()+","+super.getEmail()+","+this.typeCustomer+","+
+                this.adress;
+    }
+
 }

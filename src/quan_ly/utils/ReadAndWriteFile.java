@@ -16,6 +16,7 @@ public class ReadAndWriteFile {
                 bufferedWriter.write(p.getInToCsv());
                 bufferedWriter.newLine();
             }
+            bufferedWriter.flush();
             bufferedWriter.close();
             fileWriter.close();
         } catch (IOException e) {

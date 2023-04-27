@@ -12,13 +12,13 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(String id, String name, String dateOfBirth, boolean gender, String citizenIDNumber, String numberPhonel, String email) {
+    public Person(String id, String name, String dateOfBirth, boolean gender, String citizenIDNumber, String numberPhone, String email) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.citizenIDNumber = citizenIDNumber;
-        this.numberPhone = numberPhonel;
+        this.numberPhone = numberPhone;
         this.email = email;
     }
 
@@ -88,12 +88,11 @@ public abstract class Person {
         }
         return "Person{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\''+
-                ", gender=" + sex +
-                ", citizenIDNumber='" + citizenIDNumber + '\'' +
-                ", numberPhonel='" + numberPhone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                "| name='" + name + '\'' +
+                "| dateOfBirth='" + dateOfBirth + '\''+
+                "| gender=" + sex +
+                "| citizenIDNumber='" + citizenIDNumber + '\'' +
+                "| numberPhonel='" + numberPhone + '\'' +
+                "| email='" + email + '\'';
     }
 }
