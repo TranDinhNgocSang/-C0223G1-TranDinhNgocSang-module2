@@ -5,14 +5,14 @@ import FuramaResort.utils.RentalType;
 public abstract class Facility {
     private String idService;
     private String nameService;
-    private double area;
-    private double maximumPeople;
+    private String area;
+    private String maximumPeople;
     public RentalType rentalType;
 
     public Facility() {
     }
 
-    public Facility(String idService, String nameService, double area, double maximumPeople, RentalType rentalType) {
+    public Facility(String idService, String nameService, String area, String maximumPeople, RentalType rentalType) {
         this.idService = idService;
         this.nameService = nameService;
         this.area = area;
@@ -36,19 +36,19 @@ public abstract class Facility {
         this.nameService = nameService;
     }
 
-    public double getArea() {
+    public String getArea() {
         return area;
     }
 
-    public void setArea(double area) {
+    public void setArea(String area) {
         this.area = area;
     }
 
-    public double getMaximumPeople() {
+    public String getMaximumPeople() {
         return maximumPeople;
     }
 
-    public void setMaximumPeople(double maximumPeople) {
+    public void setMaximumPeople(String maximumPeople) {
         this.maximumPeople = maximumPeople;
     }
 
@@ -62,12 +62,10 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return "Facility{" +
-                "idService='" + idService + '\'' +
+        return "idService='" + idService + '\'' +
                 ", nameService='" + nameService + '\'' +
                 ", area=" + area +
                 ", maximumPeople=" + maximumPeople +
-                ", rentalType=" + rentalType +
-                '}';
+                ", rentalType=" + rentalType;
     }
 }

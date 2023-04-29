@@ -27,7 +27,7 @@ public class EmployeeService implements IEmployeeService {
         boolean validateIDEmployee;
         String id;
         do {
-            System.out.println("nhập id");
+            System.out.print("nhập id (NV-yyyy): ");
             id = sc.nextLine();
             if (validate.validateIDEmployee(id)) {
                 if (employeeRepository.getIndexToID(id)==-1) {
@@ -45,7 +45,7 @@ public class EmployeeService implements IEmployeeService {
         boolean validateName;
         String name;
         do {
-            System.out.println("nhập tên");
+            System.out.print("nhập tên: ");
             name = sc.nextLine();
             if (validate.validateName(name)) {
                 System.out.println("nhập thành công");
@@ -58,7 +58,7 @@ public class EmployeeService implements IEmployeeService {
         boolean validateDateOfBirth;
         String dateOfBirth;
         do {
-            System.out.println("nhập ngày sinh");
+            System.out.print("nhập ngày sinh (yyyy-mm-dd): ");
             dateOfBirth = sc.nextLine();
             if (validate.validateDateOfBirth(dateOfBirth)) {
                 LocalDate dob = LocalDate.parse(dateOfBirth);
@@ -95,7 +95,7 @@ public class EmployeeService implements IEmployeeService {
         boolean validateCitizenIDNumber;
         String citizenIDNumber;
         do {
-            System.out.println("nhập số căn cước");
+            System.out.print("nhập số căn cước (9 hoặc 12 số): ");
             citizenIDNumber = sc.nextLine();
             if (validate.validateCitizenIDNumber(citizenIDNumber)) {
                 System.out.println("nhập thành công");
@@ -108,7 +108,7 @@ public class EmployeeService implements IEmployeeService {
         boolean validateNumberPhone;
         String numberPhone;
         do {
-            System.out.println("nhập số điện thoại");
+            System.out.print("nhập số điện thoại: ");
             numberPhone = sc.nextLine();
             if (validate.validateNumberPhone(numberPhone)) {
                 System.out.println("nhập thành công");
@@ -118,7 +118,7 @@ public class EmployeeService implements IEmployeeService {
                 validateNumberPhone = true;
             }
         } while (validateNumberPhone);
-        System.out.println("nhập Email");
+        System.out.print("nhập Email: ");
         String email = sc.nextLine();
         boolean flag;
         Level level = null;
@@ -198,13 +198,13 @@ public class EmployeeService implements IEmployeeService {
         double salary;
         do {
             flag2 = true;
-            System.out.println("nhập lương");
+            System.out.print("nhập lương: ");
             salary = Double.parseDouble(sc.nextLine());
             if (salary > 0) {
                 System.out.println("nhập thành công");
                 flag2 = false;
             } else {
-                System.out.println("lương phải lớn hơn 0");
+                System.out.println("lương phải lớn hơn 0, mời nhập lại");
             }
         } while (flag2);
         Employee newEmployee = new Employee(id, name, dateOfBirth, gender, citizenIDNumber, numberPhone, email, level, position, salary);
@@ -215,7 +215,7 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void edit() {
         this.displayList();
-        System.out.println("nhập id nhân viên muốn sửa");
+        System.out.print("nhập id nhân viên muốn sửa (NV-yyyy): ");
         String id = sc.nextLine();
         int index = employeeRepository.getIndexToID(id);
         System.out.println(index);
@@ -223,47 +223,25 @@ public class EmployeeService implements IEmployeeService {
         if (index != -1) {
             do {
                 System.out.println("chọn thuộc tính bạn muốn sửa\n" +
-                        "1. id\n" +
-                        "2. name\n" +
-                        "3. dateOfBirth\n" +
-                        "4. gender\n" +
-                        "5. citizenIDNumber\n" +
-                        "6. numberPhone\n" +
-                        "7. email\n" +
-                        "8. level\n" +
-                        "9. position\n" +
-                        "10. salary\n" +
+                        "1. name\n" +
+                        "2. dateOfBirth\n" +
+                        "3. gender\n" +
+                        "4. citizenIDNumber\n" +
+                        "5. numberPhone\n" +
+                        "6. email\n" +
+                        "7. level\n" +
+                        "8. position\n" +
+                        "9. salary\n" +
                         "0. exit");
                 choice = sc.nextLine();
                 switch (choice) {
                     case "0":
                         break;
                     case "1":
-                        boolean validateId;
-                        String idEdit;
-                        do {
-                            System.out.println("nhập id");
-                            idEdit = sc.nextLine();
-                            if (validate.validateIDEmployee(idEdit)) {
-                                if (employeeRepository.getIndexToID(idEdit)==-1) {
-                                    System.out.println("nhập thành công");
-                                    employeeRepository.editID(index, idEdit);
-                                    validateId = false;
-                                }else {
-                                    System.out.println("id đã tồn tại, mời nhập lại");
-                                    validateId = true;
-                                }
-                            } else {
-                                System.out.println("nhập sai định dạng, mời nhập lại");
-                                validateId = true;
-                            }
-                        } while (validateId);
-                        break;
-                    case "2":
                         boolean validateName;
                         String name;
                         do {
-                            System.out.println("nhập tên");
+                            System.out.print("nhập tên: ");
                             name = sc.nextLine();
                             if (validate.validateName(name)) {
                                 System.out.println("nhập thành công");
@@ -275,11 +253,11 @@ public class EmployeeService implements IEmployeeService {
                             }
                         } while (validateName);
                         break;
-                    case "3":
+                    case "2":
                         boolean validateDateOfBirth;
                         String dateOfBirth;
                         do {
-                            System.out.println("nhập ngày sinh");
+                            System.out.print("nhập ngày sinh (yyyy-mm-dd): ");
                             dateOfBirth = sc.nextLine();
                             if (validate.validateDateOfBirth(dateOfBirth)) {
                                 LocalDate dob = LocalDate.parse(dateOfBirth);
@@ -305,7 +283,7 @@ public class EmployeeService implements IEmployeeService {
                             }
                         } while (validateDateOfBirth);
                         break;
-                    case "4":
+                    case "3":
                         System.out.println("nhập giới tính\n" +
                                 "Nhập 1 là nam\n" +
                                 "Nhập khác 1 là nữ");
@@ -318,11 +296,11 @@ public class EmployeeService implements IEmployeeService {
                         }
                         employeeRepository.editGender(index, gender);
                         break;
-                    case "5":
+                    case "4":
                         boolean validateCitizenIDNumber;
                         String citizenIDNumber;
                         do {
-                            System.out.println("nhập số căn cước");
+                            System.out.print("nhập số căn cước (9 hoặc 12 số): ");
                             citizenIDNumber = sc.nextLine();
                             if (validate.validateCitizenIDNumber(citizenIDNumber)) {
                                 System.out.println("nhập thành cồng");
@@ -334,11 +312,11 @@ public class EmployeeService implements IEmployeeService {
                             }
                         } while (validateCitizenIDNumber);
                         break;
-                    case "6":
+                    case "5":
                         boolean validateNumberPhone;
                         String numberPhone;
                         do {
-                            System.out.println("nhập số điện thoại");
+                            System.out.print("nhập số điện thoại: ");
                             numberPhone = sc.nextLine();
                             if (validate.validateNumberPhone(numberPhone)) {
                                 System.out.println("nhập thành cồng");
@@ -350,12 +328,12 @@ public class EmployeeService implements IEmployeeService {
                             }
                         } while (validateNumberPhone);
                         break;
-                    case "7":
-                        System.out.println("nhập Email");
+                    case "6":
+                        System.out.print("nhập Email");
                         String email = sc.nextLine();
                         employeeRepository.editEmail(index, email);
                         break;
-                    case "8":
+                    case "7":
                         boolean flag;
                         Level level = null;
                         do {
@@ -390,7 +368,7 @@ public class EmployeeService implements IEmployeeService {
                         } while (flag);
                         employeeRepository.editlevel(index, level);
                         break;
-                    case "9":
+                    case "8":
                         boolean flag1;
                         Position position = null;
                         do {
@@ -435,11 +413,11 @@ public class EmployeeService implements IEmployeeService {
                         } while (flag1);
                         employeeRepository.editPosition(index, position);
                         break;
-                    case "10":
+                    case "9":
                         boolean flag2;
                         do {
                             flag2 = true;
-                            System.out.println("nhập lương");
+                            System.out.print("nhập lương: ");
                             double salary = Double.parseDouble(sc.nextLine());
                             if (salary > 0) {
                                 System.out.println("nhập thành công");

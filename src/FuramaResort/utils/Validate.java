@@ -8,7 +8,7 @@ public class Validate {
         return Pattern.matches(ID_REGEX, string);
     }
     public boolean validateName(String string){
-        final String NAME_REGEX = "^[A-Z][a-z]+(\\s[A-Z][a-z]+)*$";
+        final String NAME_REGEX = "^([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$";
         return Pattern.matches(NAME_REGEX, string);
     }
     public boolean validateCitizenIDNumber(String string){

@@ -30,7 +30,7 @@ public class CustomerService implements ICustomerService {
         boolean validateIdCustomer;
         String id;
         do {
-            System.out.println("nhập id");
+            System.out.print("nhập id (KH-yyyy): ");
             id = sc.nextLine();
             if (validate.validateIdCustomer(id)) {
                 if (customerRepository.getIndexToID(id) == -1) {
@@ -48,7 +48,7 @@ public class CustomerService implements ICustomerService {
         boolean validateName;
         String name;
         do {
-            System.out.println("nhập tên");
+            System.out.print("nhập tên : ");
             name = sc.nextLine();
             if (validate.validateName(name)) {
                 System.out.println("nhập thành công");
@@ -61,7 +61,7 @@ public class CustomerService implements ICustomerService {
         boolean validateDateOfBirth;
         String dateOfBirth;
         do {
-            System.out.println("nhập ngày sinh");
+            System.out.print("nhập ngày sinh: ");
             dateOfBirth = sc.nextLine();
             if (validate.validateDateOfBirth(dateOfBirth)) {
                 LocalDate dob = LocalDate.parse(dateOfBirth);
@@ -98,7 +98,7 @@ public class CustomerService implements ICustomerService {
         boolean validateCitizenIDNumber;
         String citizenIDNumber;
         do {
-            System.out.println("nhập số căn cước");
+            System.out.print("nhập số căn cước (9 hoặc 12 số): ");
             citizenIDNumber = sc.nextLine();
             if (validate.validateCitizenIDNumber(citizenIDNumber)) {
                 System.out.println("nhập thành công");
@@ -111,7 +111,7 @@ public class CustomerService implements ICustomerService {
         boolean validateNumberPhone;
         String numberPhone;
         do {
-            System.out.println("nhập số điện thoại");
+            System.out.print("nhập số điện thoại: ");
             numberPhone = sc.nextLine();
             if (validate.validateNumberPhone(numberPhone)) {
                 System.out.println("nhập thành công");
@@ -121,7 +121,7 @@ public class CustomerService implements ICustomerService {
                 validateNumberPhone = true;
             }
         } while (validateNumberPhone);
-        System.out.println("nhập Email");
+        System.out.print("nhập Email: ");
         String email = sc.nextLine();
         boolean flag;
         TypeCustomer typeCustomer = null;
@@ -160,7 +160,7 @@ public class CustomerService implements ICustomerService {
                     System.out.println("bạn nhập không đúng, mời nhập lại");
             }
         } while (flag);
-        System.out.println("nhập địa chỉ");
+        System.out.print("nhập địa chỉ: ");
         String adress = sc.nextLine();
         Customer customer = new Customer(id, name, dateOfBirth, gender, citizenIDNumber, numberPhone, email, typeCustomer, adress);
         customerRepository.addNew(customer);
@@ -170,7 +170,7 @@ public class CustomerService implements ICustomerService {
     @Override
     public void edit() {
         this.displayList();
-        System.out.println("nhập id khách hàng muốn sửa");
+        System.out.print("nhập id khách hàng muốn sửa: " );
         String id = sc.nextLine();
         int index = customerRepository.getIndexToID(id);
         System.out.println(index);
@@ -178,42 +178,20 @@ public class CustomerService implements ICustomerService {
         if (index != -1) {
             do {
                 System.out.println("chọn thuộc tính bạn muốn sửa\n" +
-                        "1. id\n" +
-                        "2. name\n" +
-                        "3. dateOfBirth\n" +
-                        "4. gender\n" +
-                        "5. citizenIDNumber\n" +
-                        "6. numberPhone\n" +
-                        "7. email\n" +
-                        "8. typeCustomer\n" +
-                        "9. adress\n" +
+                        "1. name\n" +
+                        "2. dateOfBirth\n" +
+                        "3. gender\n" +
+                        "4. citizenIDNumber\n" +
+                        "5. numberPhone\n" +
+                        "6. email\n" +
+                        "7. typeCustomer\n" +
+                        "8. adress\n" +
                         "0. exit");
                 choice = sc.nextLine();
                 switch (choice) {
                     case "0":
                         break;
                     case "1":
-                        boolean validateId;
-                        String idEdit;
-                        do {
-                            System.out.println("nhập id");
-                            idEdit = sc.nextLine();
-                            if (validate.validateIdCustomer(idEdit)) {
-                                if (customerRepository.getIndexToID(idEdit)==-1) {
-                                    System.out.println("nhập thành công");
-                                    customerRepository.editID(index, idEdit);
-                                    validateId = false;
-                                }else {
-                                    System.out.println("id đã tồn tại, mời nhập lại");
-                                    validateId = true;
-                                }
-                            } else {
-                                System.out.println("nhập sai định dạng, mời nhập lại");
-                                validateId = true;
-                            }
-                        } while (validateId);
-                        break;
-                    case "2":
                         boolean validateName;
                         String name;
                         do {
@@ -229,7 +207,7 @@ public class CustomerService implements ICustomerService {
                             }
                         } while (validateName);
                         break;
-                    case "3":
+                    case "2":
                         boolean validateDateOfBirth;
                         String dateOfBirth;
                         do {
@@ -259,7 +237,7 @@ public class CustomerService implements ICustomerService {
                             }
                         } while (validateDateOfBirth);
                         break;
-                    case "4":
+                    case "3":
                         System.out.println("nhập giới tính\n" +
                                 "Nhập 1 là nam\n" +
                                 "Nhập khác 1 là nữ");
@@ -272,7 +250,7 @@ public class CustomerService implements ICustomerService {
                         }
                         customerRepository.editGender(index, gender);
                         break;
-                    case "5":
+                    case "4":
                         boolean validateCitizenIDNumber;
                         String citizenIDNumber;
                         do {
@@ -288,7 +266,7 @@ public class CustomerService implements ICustomerService {
                             }
                         } while (validateCitizenIDNumber);
                         break;
-                    case "6":
+                    case "5":
                         boolean validateNumberPhone;
                         String numberPhone;
                         do {
@@ -304,12 +282,12 @@ public class CustomerService implements ICustomerService {
                             }
                         } while (validateNumberPhone);
                         break;
-                    case "7":
+                    case "6":
                         System.out.println("nhập Email");
                         String email = sc.nextLine();
                         customerRepository.editEmail(index, email);
                         break;
-                    case "8":
+                    case "7":
                         boolean flag;
                         TypeCustomer typeCustomer = null;
                         do {
@@ -349,7 +327,7 @@ public class CustomerService implements ICustomerService {
                         } while (flag);
                         customerRepository.editTypeCustomer(index, typeCustomer);
                         break;
-                    case "9":
+                    case "8":
                         System.out.println("nhập địa chỉ");
                         String adress = sc.nextLine();
                         customerRepository.editAdress(index,adress);

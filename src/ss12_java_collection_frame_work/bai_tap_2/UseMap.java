@@ -19,7 +19,6 @@ public class UseMap {
         Set<Character> charSet = map.keySet();
         for (Character c : charSet) {
             System.out.println(c + " - " + map.get(c));
-
         }
 
     }

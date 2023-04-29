@@ -1,8 +1,6 @@
 package FuramaResort.repository;
 
 import FuramaResort.model.Customer;
-import FuramaResort.utils.Level;
-import FuramaResort.utils.Position;
 import FuramaResort.utils.TypeCustomer;
 
 import java.util.List;

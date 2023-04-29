@@ -1,8 +1,12 @@
 package FuramaResort.controller;
 
+import FuramaResort.repository.FacilityRepository;
+import FuramaResort.service.FacilityService;
+
 import java.util.Scanner;
 
 public class FacilityManagementController {
+    FacilityService facilityService = new FacilityService();
     public void facilityManagementMenu(){
         Scanner sc = new Scanner(System.in);
         String choice = "0";
@@ -15,6 +19,7 @@ public class FacilityManagementController {
             choice = sc.nextLine();
             switch (choice){
                 case "1":
+                    facilityService.displayListFacility();
                     break;
                 case "2":
                     break;

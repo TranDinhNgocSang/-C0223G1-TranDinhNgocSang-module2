@@ -1,6 +1,5 @@
 package FuramaResort.repository;
 import FuramaResort.model.Customer;
-import FuramaResort.model.Employee;
 import FuramaResort.utils.*;
 
 import java.util.ArrayList;
@@ -8,7 +7,7 @@ import java.util.List;
 
 public class CustomerRepository implements ICustomerRepository{
     private static List<Customer> customerList = new ArrayList<>();
-    private final static String CUSTOMER_FILE_PATH = "E:\\CodeGym\\module2\\src\\FuramaResort\\data\\employee_data.csv";
+    private final static String CUSTOMER_FILE_PATH = "E:\\CodeGym\\module2\\src\\FuramaResort\\data\\customer_data.csv";
     ReaAndWriteFileCustomer reaAndWriteFileCustomer = new ReaAndWriteFileCustomer();
 
     @Override
