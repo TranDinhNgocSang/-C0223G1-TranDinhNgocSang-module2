@@ -6,16 +6,19 @@ public abstract class Facility {
     private String idService;
     private String nameService;
     private String area;
+    private String price;
     private String maximumPeople;
     public RentalType rentalType;
 
     public Facility() {
     }
 
-    public Facility(String idService, String nameService, String area, String maximumPeople, RentalType rentalType) {
+    public Facility(String idService, String nameService, String area, String price, String maximumPeople,
+                    RentalType rentalType) {
         this.idService = idService;
         this.nameService = nameService;
         this.area = area;
+        this.price = price;
         this.maximumPeople = maximumPeople;
         this.rentalType = rentalType;
     }
@@ -44,6 +47,14 @@ public abstract class Facility {
         this.area = area;
     }
 
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
     public String getMaximumPeople() {
         return maximumPeople;
     }
@@ -63,9 +74,10 @@ public abstract class Facility {
     @Override
     public String toString() {
         return "idService='" + idService + '\'' +
-                ", nameService='" + nameService + '\'' +
-                ", area=" + area +
-                ", maximumPeople=" + maximumPeople +
-                ", rentalType=" + rentalType;
+                "| nameService='" + nameService + '\'' +
+                "| area='" + area + '\'' +
+                "| price='" + price + '\'' +
+                "| maximumPeople='" + maximumPeople + '\'' +
+                "| rentalType=" + rentalType;
     }
 }

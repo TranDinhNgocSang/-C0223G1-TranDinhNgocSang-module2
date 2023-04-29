@@ -4,16 +4,16 @@ import FuramaResort.utils.RentalType;
 
 public class House extends  Facility{
     private String standard;
-    private String poolArea;
+    private String numberOfFloors;
 
     public House() {
     }
 
-    public House(String idService, String nameService, String area, String maximumPeople, RentalType rentalType,
-                 String standard, String poolArea) {
-        super(idService, nameService, area, maximumPeople, rentalType);
+    public House(String idService, String nameService, String area, String price, String maximumPeople,
+                 RentalType rentalType, String standard, String numberOfFloors) {
+        super(idService, nameService, area, price, maximumPeople, rentalType);
         this.standard = standard;
-        this.poolArea = poolArea;
+        this.numberOfFloors = numberOfFloors;
     }
 
     public String getStandard() {
@@ -24,19 +24,19 @@ public class House extends  Facility{
         this.standard = standard;
     }
 
-    public String getPoolArea() {
-        return poolArea;
+    public String numberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setPoolArea(String poolArea) {
-        this.poolArea = poolArea;
+    public void setPoolArea(String numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
 
     @Override
     public String toString() {
-        return " House {" + super.toString()+
-                "standard='" + standard + '\'' +
-                ", poolArea='" + poolArea + '\'' +
+        return "House{" + super.toString()+
+                "| standard='" + standard + '\'' +
+                "| poolArea='" + numberOfFloors + '\'' +
                 '}';
     }
 }

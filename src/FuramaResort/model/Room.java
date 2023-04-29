@@ -5,8 +5,13 @@ import FuramaResort.utils.RentalType;
 public class Room extends Facility {
     private String freeService;
 
-    public Room(String idService, String nameService, String area, String maximumPeople, RentalType rentalType, String freeService) {
-        super(idService, nameService, area, maximumPeople, rentalType);
+    public Room() {
+
+    }
+
+    public Room(String idService, String nameService, String area, String price, String maximumPeople,
+                RentalType rentalType, String freeService) {
+        super(idService, nameService, area, price, maximumPeople, rentalType);
         this.freeService = freeService;
     }
 
@@ -20,8 +25,8 @@ public class Room extends Facility {
 
     @Override
     public String toString() {
-        return " Room {" + super.toString()+
-                "freeService='" + freeService + '\'' +
+        return "Room{" + super.toString()+
+                "| freeService='" + freeService + '\'' +
                 '}';
     }
 }
