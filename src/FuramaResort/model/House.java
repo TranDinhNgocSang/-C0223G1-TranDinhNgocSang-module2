@@ -2,7 +2,7 @@ package FuramaResort.model;
 
 import FuramaResort.utils.RentalType;
 
-public class House extends  Facility{
+public class House extends Facility {
     private String standard;
     private String numberOfFloors;
 
@@ -34,9 +34,14 @@ public class House extends  Facility{
 
     @Override
     public String toString() {
-        return "House{" + super.toString()+
+        return "House{" + super.toString() +
                 "| standard='" + standard + '\'' +
                 "| poolArea='" + numberOfFloors + '\'' +
                 '}';
+    }
+
+    public String getInToCsv() {
+        return super.getIdService() + "," + super.getNameService() + "," + super.getArea() + "," + super.getPrice() + "," +
+                super.getMaximumPeople() + "," + super.getRentalType() + "," + this.standard + "," + this.numberOfFloors;
     }
 }

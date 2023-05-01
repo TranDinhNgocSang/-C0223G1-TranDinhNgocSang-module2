@@ -50,4 +50,10 @@ public class Villa extends Facility{
                 "| numberOfFloors='" + numberOfFloors + '\'' +
                 '}';
     }
+
+    public String getInToCsv(){
+        return super.getIdService()+","+super.getNameService()+","+super.getArea()+","+super.getPrice()+","+
+                super.getMaximumPeople()+","+super.getRentalType()+","+this.standard+","+this.getPoolArea()+","+
+                this.numberOfFloors;
+    }
 }

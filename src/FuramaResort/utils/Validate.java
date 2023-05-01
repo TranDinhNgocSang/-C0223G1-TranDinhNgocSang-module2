@@ -54,7 +54,7 @@ public class Validate {
     }
 
     public boolean validateArea(String string) {
-        final String AREA = "^([3,]\\d+|[1,]\\d{2,})$";
+        final String AREA = "^([3-9]\\d+|[1-9]\\d{2,})$";
         return Pattern.matches(AREA, string);
     }
 

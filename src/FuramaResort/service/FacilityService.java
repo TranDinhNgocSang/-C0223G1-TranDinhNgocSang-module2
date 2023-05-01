@@ -18,10 +18,20 @@ public class FacilityService implements IFacilityService {
     Validate validate = new Validate();
 
     public void displayListFacility() {
-        Map<Facility, Integer> map = facilityRepository.getFacilityMap();
-        Set<Facility> facilitySet = map.keySet();
-        for (Facility c : facilitySet) {
-            System.out.println(c + " - " + map.get(c) + " lần sử dụng");
+        Map<Villa, Integer> villaMap = facilityRepository.getVillaMap();
+        Set<Villa> villaSet = villaMap.keySet();
+        for (Facility v : villaSet) {
+            System.out.println(v + " - " + villaMap.get(v) + " lần sử dụng");
+        }
+        Map<House, Integer> houseMap = facilityRepository.getHouseMap();
+        Set<House> houseSet = houseMap.keySet();
+        for (House h : houseSet) {
+            System.out.println(h + " - " + houseMap.get(h) + " lần sử dụng");
+        }
+        Map<Room, Integer> rooomMap = facilityRepository.getRoomMap();
+        Set<Room> roomSet = rooomMap.keySet();
+        for (Room r : roomSet) {
+            System.out.println(r + " - " + rooomMap.get(r) + " lần sử dụng");
         }
     }
 
@@ -32,7 +42,7 @@ public class FacilityService implements IFacilityService {
             System.out.print("nhập mã dịch vụ (SVVL-YYYY): ");
             idService = sc.nextLine();
             if (validate.validateIdServiceVilla(idService)) {
-                if (facilityRepository.checkIdService(idService)) {
+                if (facilityRepository.checkIdServiceVilla(idService)) {
                     System.out.println("đã tồn tại");
                     break;
                 } else {
@@ -124,15 +134,15 @@ public class FacilityService implements IFacilityService {
                     do {
                         System.out.println("nhập số tầng: ");
                         numberOfFloors = sc.nextLine();
-                        if (validate.validateNumberOfFloors(numberOfFloors)){
+                        if (validate.validateNumberOfFloors(numberOfFloors)) {
                             System.out.println("nhập thành công");
                         } else {
                             System.out.println("bạn nhập sai định dạng, mời nhập lại");
                         }
-                    }while (!validate.validateNumberOfFloors(numberOfFloors));
+                    } while (!validate.validateNumberOfFloors(numberOfFloors));
                     Villa newVilla = new Villa(idService, nameService, area, price, maximumPeople, rentalType, standard, poolArea,
                             numberOfFloors);
-                    facilityRepository.addNewFacility(newVilla);
+                    facilityRepository.addNewVilla(newVilla);
                     this.displayListFacility();
                 }
             } else {
@@ -148,7 +158,7 @@ public class FacilityService implements IFacilityService {
             System.out.print("nhập mã dịch vụ (SVHO-YYYY): ");
             idService = sc.nextLine();
             if (validate.validateIdServiceHouse(idService)) {
-                if (facilityRepository.checkIdService(idService)) {
+                if (facilityRepository.checkIdServiceHouse(idService)) {
                     System.out.println("đã tồn tại");
                     break;
                 } else {
@@ -230,15 +240,15 @@ public class FacilityService implements IFacilityService {
                     do {
                         System.out.println("nhập số tầng: ");
                         numberOfFloors = sc.nextLine();
-                        if (validate.validateNumberOfFloors(numberOfFloors)){
+                        if (validate.validateNumberOfFloors(numberOfFloors)) {
                             System.out.println("nhập thành công");
                         } else {
                             System.out.println("bạn nhập sai định dạng, mời nhập lại");
                         }
-                    }while (!validate.validateNumberOfFloors(numberOfFloors));
+                    } while (!validate.validateNumberOfFloors(numberOfFloors));
                     House newHouse = new House(idService, nameService, area, price, maximumPeople, rentalType, standard,
                             numberOfFloors);
-                    facilityRepository.addNewFacility(newHouse);
+                    facilityRepository.addNewHouse(newHouse);
                     this.displayListFacility();
                 }
             } else {
@@ -254,7 +264,7 @@ public class FacilityService implements IFacilityService {
             System.out.print("nhập mã dịch vụ (SVRO-YYYY): ");
             idService = sc.nextLine();
             if (validate.validateIdServiceRoom(idService)) {
-                if (facilityRepository.checkIdService(idService)) {
+                if (facilityRepository.checkIdServiceRoom(idService)) {
                     System.out.println("đã tồn tại");
                     break;
                 } else {
@@ -330,10 +340,10 @@ public class FacilityService implements IFacilityService {
                                 break;
                         }
                     } while (flag);
-                    System.out.print("nhập tiêu chuẩn phòng: ");
+                    System.out.print("nhập dịch vụ miễn phí đi kèm: ");
                     String standard = sc.nextLine();
                     Room newRoom = new Room(idService, nameService, area, price, maximumPeople, rentalType, standard);
-                    facilityRepository.addNewFacility(newRoom);
+                    facilityRepository.addNewRoom(newRoom);
                     this.displayListFacility();
                 }
             } else {
@@ -344,8 +354,6 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public void displayListFacilityMaintenance() {
-        for (Facility f : facilityRepository.displayListFacilityMaintenance()) {
-            System.out.println(f);
-        }
+        facilityRepository.displayListFacilityMaintenance();
     }
 }
