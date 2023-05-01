@@ -28,7 +28,7 @@ public class FacilityManagementController {
                                 "1.\tAdd New Villa\n" +
                                 "2.\tAdd New House \n" +
                                 "3.\tAdd New Room\n" +
-                                "4.\tBack to menu\n");
+                                "4.\tBack to menu");
                         choice1 = sc.nextLine();
                         switch (choice1){
                             case "1":

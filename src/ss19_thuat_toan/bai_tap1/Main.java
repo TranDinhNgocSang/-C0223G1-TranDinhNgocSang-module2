@@ -10,13 +10,11 @@ public class Main {
         System.out.print("nhập số lượng số nguyên tố cần tính tổng: ");
         int n = Integer.parseInt(sc.nextLine());
         List<Integer> list = new ArrayList<>();
-        int count = 0;
         int number = 2;
         int sum = 0;
-        while (count < n) {
+        while (list.size() < n) {
             if (checkPrime(number)) {
                 sum += number;
-                count++;
                 list.add(number);
             }
             number++;
