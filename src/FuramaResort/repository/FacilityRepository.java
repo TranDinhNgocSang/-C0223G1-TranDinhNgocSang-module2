@@ -18,12 +18,9 @@ public class FacilityRepository implements IFacilityRepository {
     ReadAndWriteVillaFile readAndWriteVillaFile = new ReadAndWriteVillaFile();
     ReadAndWriteHouseFile readAndWriteHouseFile = new ReadAndWriteHouseFile();
     ReadAndWriteRoomFile readAndWriteRoomFile = new ReadAndWriteRoomFile();
-    private final String VILLA_FILE_PATH =
-            "E:\\CodeGym\\my-new-project\\-C0223G1-TranDinhNgocSang-module2\\src\\FuramaResort\\data\\villa_data.csv";
-    private final String HOUSE_FILE_PATH =
-            "E:\\CodeGym\\my-new-project\\-C0223G1-TranDinhNgocSang-module2\\src\\FuramaResort\\data\\house_data.csv";
-    private final String ROOM_FILE_PATH =
-            "E:\\CodeGym\\my-new-project\\-C0223G1-TranDinhNgocSang-module2\\src\\FuramaResort\\data\\room_data.csv";
+    private final String VILLA_FILE_PATH = "E:\\CodeGym\\my-new-project\\src\\FuramaResort\\data\\villa_data.csv";
+    private final String HOUSE_FILE_PATH = "E:\\CodeGym\\my-new-project\\src\\FuramaResort\\data\\house_data.csv";
+    private final String ROOM_FILE_PATH = "E:\\CodeGym\\my-new-project\\src\\FuramaResort\\data\\room_data.csv";
 
 
     public Map<Villa, Integer> getVillaMap() {
