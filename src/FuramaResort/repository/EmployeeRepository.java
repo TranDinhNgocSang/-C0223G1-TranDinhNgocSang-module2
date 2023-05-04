@@ -10,7 +10,7 @@ import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository {
     private static List<Employee> employeeList = new ArrayList<>();
-    private final static String EMPLOYEE_FILE_PATH = "E:\\CodeGym\\module2\\src\\FuramaResort\\data\\employee_data.csv";
+    private final static String EMPLOYEE_FILE_PATH = "E:\\CodeGym\\my-new-project\\src\\FuramaResort\\data\\employee_data.csv";
     ReadAndWriteFileEmployee readAndWriteFileEmployee = new ReadAndWriteFileEmployee();
 
     @Override

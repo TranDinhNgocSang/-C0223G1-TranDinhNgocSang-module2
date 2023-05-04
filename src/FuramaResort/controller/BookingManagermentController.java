@@ -1,8 +1,11 @@
 package FuramaResort.controller;
 
+import FuramaResort.service.BookingService;
+
 import java.util.Scanner;
 
 public class BookingManagermentController {
+    BookingService bookingService = new BookingService();
     public void bookingManagermentMenu(){
         Scanner sc = new Scanner(System.in);
         String choice = "0";
@@ -17,8 +20,10 @@ public class BookingManagermentController {
             choice = sc.nextLine();
             switch (choice){
                 case "1":
+                    bookingService.addNewBoking();
                     break;
                 case "2":
+                    bookingService.dispLayListBooking();
                     break;
                 case "3":
                     break;

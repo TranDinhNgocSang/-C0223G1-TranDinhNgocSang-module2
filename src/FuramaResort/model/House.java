@@ -2,6 +2,8 @@ package FuramaResort.model;
 
 import FuramaResort.utils.RentalType;
 
+import java.util.Objects;
+
 public class House extends Facility {
     private String standard;
     private String numberOfFloors;
@@ -44,4 +46,18 @@ public class House extends Facility {
         return super.getIdService() + "," + super.getNameService() + "," + super.getArea() + "," + super.getPrice() + "," +
                 super.getMaximumPeople() + "," + super.getRentalType() + "," + this.standard + "," + this.numberOfFloors;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        House house = (House) o;
+        return this.getIdService().equals(house.getIdService());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(standard, numberOfFloors);
+    }
+
 }

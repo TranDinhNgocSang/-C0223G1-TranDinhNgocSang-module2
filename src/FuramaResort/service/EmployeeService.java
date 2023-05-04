@@ -60,7 +60,7 @@ public class EmployeeService implements IEmployeeService {
         do {
             System.out.print("nhập ngày sinh (yyyy-mm-dd): ");
             dateOfBirth = sc.nextLine();
-            if (validate.validateDateOfBirth(dateOfBirth)) {
+            if (validate.validateDate(dateOfBirth)) {
                 LocalDate dob = LocalDate.parse(dateOfBirth);
                 LocalDate now = LocalDate.now();
                 if (Period.between(dob, now).getYears() >= 18) {
@@ -259,7 +259,7 @@ public class EmployeeService implements IEmployeeService {
                         do {
                             System.out.print("nhập ngày sinh (yyyy-mm-dd): ");
                             dateOfBirth = sc.nextLine();
-                            if (validate.validateDateOfBirth(dateOfBirth)) {
+                            if (validate.validateDate(dateOfBirth)) {
                                 LocalDate dob = LocalDate.parse(dateOfBirth);
                                 LocalDate now = LocalDate.now();
                                 if (Period.between(dob, now).getYears() >= 18) {

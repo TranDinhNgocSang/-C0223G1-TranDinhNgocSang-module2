@@ -1,10 +1,7 @@
 package FuramaResort.service;
 
 import FuramaResort.model.Customer;
-import FuramaResort.model.Employee;
 import FuramaResort.repository.CustomerRepository;
-import FuramaResort.utils.Level;
-import FuramaResort.utils.Position;
 import FuramaResort.utils.TypeCustomer;
 import FuramaResort.utils.Validate;
 
@@ -63,7 +60,7 @@ public class CustomerService implements ICustomerService {
         do {
             System.out.print("nhập ngày sinh: ");
             dateOfBirth = sc.nextLine();
-            if (validate.validateDateOfBirth(dateOfBirth)) {
+            if (validate.validateDate(dateOfBirth)) {
                 LocalDate dob = LocalDate.parse(dateOfBirth);
                 LocalDate now = LocalDate.now();
                 if (Period.between(dob, now).getYears() >= 18) {
@@ -213,7 +210,7 @@ public class CustomerService implements ICustomerService {
                         do {
                             System.out.println("nhập ngày sinh");
                             dateOfBirth = sc.nextLine();
-                            if (validate.validateDateOfBirth(dateOfBirth)) {
+                            if (validate.validateDate(dateOfBirth)) {
                                 LocalDate dob = LocalDate.parse(dateOfBirth);
                                 LocalDate now = LocalDate.now();
                                 if (Period.between(dob, now).getYears() >= 18) {

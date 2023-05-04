@@ -22,7 +22,7 @@ public class FacilityRepository implements IFacilityRepository {
     private final String HOUSE_FILE_PATH = "E:\\CodeGym\\my-new-project\\src\\FuramaResort\\data\\house_data.csv";
     private final String ROOM_FILE_PATH = "E:\\CodeGym\\my-new-project\\src\\FuramaResort\\data\\room_data.csv";
 
-
+    @Override
     public Map<Villa, Integer> getVillaMap() {
         return villaMap = readAndWriteVillaFile.read(VILLA_FILE_PATH);
     }
@@ -59,6 +59,7 @@ public class FacilityRepository implements IFacilityRepository {
         readAndWriteRoomFile.write(ROOM_FILE_PATH, roomMap);
     }
 
+    @Override
     public boolean checkIdServiceVilla(String id) {
         villaMap = readAndWriteVillaFile.read(VILLA_FILE_PATH);
         Set<Villa> villaSet = villaMap.keySet();
@@ -115,5 +116,23 @@ public class FacilityRepository implements IFacilityRepository {
             }
         }
 
+    }
+    //nhap
+    public void addBookingVilla(Villa villa) {
+        villaMap = readAndWriteVillaFile.read(VILLA_FILE_PATH);
+        villaMap.put(villa,villaMap.get(villa)+1);
+        readAndWriteVillaFile.write(VILLA_FILE_PATH, villaMap);
+    }
+
+    public void addBookingHouse(House house) {
+        houseMap = readAndWriteHouseFile.read(HOUSE_FILE_PATH);
+        houseMap.put(house,houseMap.get(house)+1);
+        readAndWriteHouseFile.write(HOUSE_FILE_PATH, houseMap);
+    }
+
+    public void addBookingRoom(Room room) {
+        roomMap = readAndWriteRoomFile.read(ROOM_FILE_PATH);
+        roomMap.put(room,roomMap.get(room)+1);
+        readAndWriteRoomFile.write(ROOM_FILE_PATH, roomMap);
     }
 }

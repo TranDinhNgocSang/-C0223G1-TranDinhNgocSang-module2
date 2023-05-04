@@ -86,8 +86,7 @@ public abstract class Person {
         }else {
             sex = "female";
         }
-        return "Person{" +
-                "id='" + id + '\'' +
+        return "id='" + id + '\'' +
                 "| name='" + name + '\'' +
                 "| dateOfBirth='" + dateOfBirth + '\''+
                 "| gender=" + sex +
