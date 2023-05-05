@@ -6,7 +6,7 @@ import FuramaResort.utils.Position;
 
 import java.util.List;
 
-public interface IEmployeeRepository extends Repository{
+public interface IEmployeeRepository{
     List<Employee> getList();
     void addNew (Employee employee);
     int getIndexToID (String id);

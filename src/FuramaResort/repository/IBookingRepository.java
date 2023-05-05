@@ -4,7 +4,7 @@ import FuramaResort.model.Booking;
 
 import java.util.List;
 
-public interface IBookingRepository extends Repository {
+public interface IBookingRepository {
     List<String> getIdCustomerList();
 
     List<String> getIdServiceList();

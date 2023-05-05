@@ -1,6 +1,6 @@
 package FuramaResort.service;
 
-public interface IFacilityService extends Service{
+public interface IFacilityService {
     void displayListFacility();
     void addNewVilla();
     void addNewHouse();

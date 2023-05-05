@@ -1,6 +1,6 @@
 package FuramaResort.service;
 
-public interface IEmployeeService extends Service{
+public interface IEmployeeService {
     void displayList();
     void addNew ();
     void edit();

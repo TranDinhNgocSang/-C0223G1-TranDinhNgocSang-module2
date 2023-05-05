@@ -8,7 +8,7 @@ import FuramaResort.model.Villa;
 import java.util.List;
 import java.util.Map;
 
-public interface IFacilityRepository extends Repository {
+public interface IFacilityRepository {
     Map<Villa, Integer> getVillaMap();
 
     Map<House, Integer> getHouseMap();

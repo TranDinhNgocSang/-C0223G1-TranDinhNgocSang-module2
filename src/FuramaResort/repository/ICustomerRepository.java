@@ -5,7 +5,7 @@ import FuramaResort.utils.TypeCustomer;
 
 import java.util.List;
 
-public interface ICustomerRepository extends Repository{
+public interface ICustomerRepository{
     List<Customer> getList();
     void addNew (Customer customer);
     int getIndexToID (String id);

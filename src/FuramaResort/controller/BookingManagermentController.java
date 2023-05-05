@@ -1,11 +1,14 @@
 package FuramaResort.controller;
 
+import FuramaResort.repository.ContractRepository;
 import FuramaResort.service.BookingService;
+import FuramaResort.service.ContractService;
 
 import java.util.Scanner;
 
 public class BookingManagermentController {
     BookingService bookingService = new BookingService();
+    ContractService contractService = new ContractService();
     public void bookingManagermentMenu(){
         Scanner sc = new Scanner(System.in);
         String choice = "0";
@@ -26,10 +29,13 @@ public class BookingManagermentController {
                     bookingService.dispLayListBooking();
                     break;
                 case "3":
+                    contractService.createNewContract();
                     break;
                 case "4":
+                    contractService.displayContractList();
                     break;
                 case "5":
+                    contractService.editContract();
                     break;
                 case "6":
                     break;

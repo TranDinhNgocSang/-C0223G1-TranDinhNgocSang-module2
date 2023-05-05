@@ -43,6 +43,10 @@ public class BookingRepository implements IBookingRepository {
     @Override
     public List<Booking> getBookingList() {
         bookingList = readAndWriteBookingFile.read(BOOKING_FILE_PATH);
+        return bookingList;
+    }
+    public void arrangeBookingList() {
+        bookingList = readAndWriteBookingFile.read(BOOKING_FILE_PATH);
         Collections.sort(bookingList, new Comparator<Booking>() {
             @Override
             public int compare(Booking o1, Booking o2) {
@@ -53,7 +57,7 @@ public class BookingRepository implements IBookingRepository {
                 }
             }
         });
-        return bookingList;
+        readAndWriteBookingFile.write(BOOKING_FILE_PATH, bookingList);
     }
 
     @Override
@@ -61,6 +65,7 @@ public class BookingRepository implements IBookingRepository {
         bookingList = readAndWriteBookingFile.read(BOOKING_FILE_PATH);
         bookingList.add(booking);
         readAndWriteBookingFile.write(BOOKING_FILE_PATH, bookingList);
+        arrangeBookingList();
     }
 
     @Override

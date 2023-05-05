@@ -1,6 +1,6 @@
 package FuramaResort.service;
 
-public interface ICustomerService extends Service{
+public interface ICustomerService {
     void displayList();
     void addNew ();
     void edit();

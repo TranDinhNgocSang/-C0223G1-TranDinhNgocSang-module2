@@ -2,6 +2,8 @@ package FuramaResort.model;
 
 import FuramaResort.utils.RentalType;
 
+import java.util.Objects;
+
 public class Villa extends Facility{
     private String standard;
     private String poolArea;
@@ -55,5 +57,18 @@ public class Villa extends Facility{
         return super.getIdService()+","+super.getNameService()+","+super.getArea()+","+super.getPrice()+","+
                 super.getMaximumPeople()+","+super.getRentalType()+","+this.standard+","+this.getPoolArea()+","+
                 this.numberOfFloors;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Villa villa = (Villa) o;
+        return this.getIdService().equals(villa.getIdService());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(standard, poolArea, numberOfFloors);
     }
 }
