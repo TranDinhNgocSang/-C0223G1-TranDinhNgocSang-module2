@@ -3,6 +3,7 @@ package FuramaResort.service;
 import FuramaResort.model.Booking;
 import FuramaResort.model.Contract;
 import FuramaResort.repository.ContractRepository;
+import FuramaResort.utils.Validate;
 
 import java.util.Scanner;
 import java.util.Stack;
@@ -10,6 +11,7 @@ import java.util.Stack;
 public class ContractService implements IContractService {
     Scanner sc = new Scanner(System.in);
     ContractRepository contractRepository = new ContractRepository();
+    Validate validate = new Validate();
 
     @Override
     public void createNewContract() {
@@ -27,10 +29,22 @@ public class ContractService implements IContractService {
             System.out.print("nhập mã số hợp đồng: ");
             String numberContrac = sc.nextLine();
             String idBooking = bookingNotContract.peek().getIdBooking();
-            System.out.print("nhập tiền cọc trước: ");
-            String deposit = sc.nextLine();
-            System.out.print("nhập tổng tiền thanh toán: ");
-            String totalPayment = sc.nextLine();
+            String deposit;
+            do {
+                System.out.print("nhập tiền cọc trước: ");
+                deposit = sc.nextLine();
+                if (!validate.validatePrice(deposit)){
+                    System.out.println("nhập sai định dạng mời nhập lại");
+                }
+            }while (!validate.validatePrice(deposit));
+            String totalPayment;
+            do {
+                System.out.print("nhập tổng tiền thanh toán: ");
+                totalPayment = sc.nextLine();
+                if (!validate.validatePrice(totalPayment)){
+                    System.out.println("nhập sai định dạng mời nhập lại");
+                }
+            }while (validate.validatePrice(totalPayment));
             Contract contract = new Contract(numberContrac,idBooking,deposit,totalPayment);
             contractRepository.createNew(contract);
         }
